@@ -38,6 +38,8 @@ dependencies:
   firebase_auth: ^4.9.0
   firebase_core: ^2.15.1
   shared_preferences: ^2.2.1
+  google_fonts: ^5.1.0
+  gradient_borders: ^1.0.0
 
 dev_dependencies:
   flutter_test:
@@ -67,6 +69,11 @@ flutter:
   #   - images/a_dot_ham.jpeg
   assets:
    - assets\images\blazeLogo.png
+   - assets\images\google logo.avif
+   - asset\images\facebook logo.avif
+   - asset\images\instagram logo.avif
+
+   
      
 
   # An image asset can refer to one or more resolution-specific "variants", see

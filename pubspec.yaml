@@ -70,8 +70,8 @@ flutter:
   assets:
    - assets\images\blazeLogo.png
    - assets\images\google logo.avif
-   - asset\images\facebook logo.avif
-   - asset\images\instagram logo.avif
+   - assets\images\facebook logo.avif
+   - assets\images\instagram logo.avif
 
    
      

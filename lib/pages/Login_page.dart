@@ -15,7 +15,7 @@ class Loginpage extends StatelessWidget {
       extendBodyBehindAppBar: true,
       body:  Stack(
         children: [
-          Back_Ground(),
+        const  Back_Ground(),
          SizedBox(
          height: screenHeight,
          width: screenWidth,
@@ -26,7 +26,7 @@ class Loginpage extends StatelessWidget {
              Container(
               width: 400,
               height: 200,
-              decoration: BoxDecoration(
+              decoration:const BoxDecoration(
                 image: DecorationImage(image: NetworkImage("assets/images/blazeLogo.png")),
               ),
              ),
@@ -37,6 +37,15 @@ class Loginpage extends StatelessWidget {
               fontWeight: FontWeight.bold
               )
               ),
+
+              TextButton(onPressed: (){},
+               child: Text('SIGN UP',
+                 style: GoogleFonts.phudu(
+                 color: Colors.white,
+                  fontSize: 36,
+                  fontWeight: FontWeight.bold,
+                  backgroundColor: Colors.blue,
+              ),)),
               const SizedBox(
                 height: 20,),
                 Row(
@@ -57,22 +66,44 @@ class Loginpage extends StatelessWidget {
                      ),))
                   ],
                 ),
-                SizedBox(
+               const SizedBox(
                  height: 70, 
                 ),
-                Column(
+                 Column(
                 children: [
-                   Text("Sign in with Google",
+                   Text("Sign in with :",
                     style: GoogleFonts.nunito(
                       color: Colors.white,
                       fontSize: 18,
                       fontWeight: FontWeight.w500,
+                      
                     ) ,),
                     Container(
                       padding: const EdgeInsets.all(12),
                       width: 50,
                       height: 50,
-                      decoration: BoxDecoration(
+                      decoration: const BoxDecoration(
+                        borderRadius: BorderRadius.all(Radius.circular(12)),
+                        border: GradientBoxBorder(
+                          gradient:  LinearGradient(
+                            colors:[
+                               Color.fromARGB(255, 92, 92, 92),
+                               Color.fromARGB(26, 167, 160, 160),
+                            ] )
+                      ),
+                      gradient: LinearGradient(colors:[
+                         Color.fromARGB(255, 92, 92, 92),
+                               Color.fromARGB(26, 167, 160, 160),
+                      ])
+                    ),
+                    child:   Image.asset("assets/images/google logo.avif"),
+                ),
+               
+                     Container(
+                      padding: const EdgeInsets.all(12),
+                      width: 50,
+                      height: 50,
+                      decoration: const BoxDecoration(
                         borderRadius: BorderRadius.all(Radius.circular(12)),
                         border: GradientBoxBorder(
                           gradient: LinearGradient(
@@ -80,10 +111,36 @@ class Loginpage extends StatelessWidget {
                               Colors.white
                             ] )
                       ),
+                      gradient: LinearGradient(colors:[
+                        Colors.white 
+                      ])
                     ),
-                    child:   Image.asset("assets/images/google logo.avif"),
-                )],)
-        ])
+                    child:   Image.asset("assets/images/instagram logo.avif"),
+                ),
+                   Container(
+                      padding: const EdgeInsets.all(12),
+                      width: 50,
+                      height: 50,
+                      decoration:const BoxDecoration(
+                        borderRadius: BorderRadius.all(Radius.circular(12)),
+                        border: GradientBoxBorder(
+                          gradient: LinearGradient(
+                            colors:[
+                             Color.fromARGB(255, 92, 92, 92),
+                              Color.fromARGB(26, 167, 160, 160),
+                            ] )
+                      ),
+                      gradient: LinearGradient(colors:[
+                               Color.fromARGB(255, 92, 92, 92),
+                               Color.fromARGB(26, 167, 160, 160),
+                      ])
+                    ),
+                    child:   Image.asset("assets/images/facebook logo.avif"),
+                
+                  )  ],)
+
+                
+        ]) 
 
 
        ) ],

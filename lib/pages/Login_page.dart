@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-
+import 'package:blaze_stream/routes.dart';
 import 'package:blaze_stream/pages/background.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:gradient_borders/box_borders/gradient_box_border.dart';
@@ -17,11 +17,14 @@ class Loginpage extends StatelessWidget {
         children: [
         const  Back_Ground(),
          SizedBox(
+          
          height: screenHeight,
          width: screenWidth,
+         
           child:  Column(
           mainAxisAlignment: MainAxisAlignment.center,
           crossAxisAlignment: CrossAxisAlignment.center,
+          
           children: [
              Container(
               width: 400,
@@ -38,7 +41,9 @@ class Loginpage extends StatelessWidget {
               )
               ),
 
-              TextButton(onPressed: (){},
+              TextButton(onPressed: (){
+               
+              },
                child: Text('SIGN UP',
                  style: GoogleFonts.phudu(
                  color: Colors.white,
@@ -57,7 +62,9 @@ class Loginpage extends StatelessWidget {
                       fontSize: 18,
                       fontWeight: FontWeight.w500,
                     ) ,),
-                    TextButton(onPressed: (){},
+                    TextButton(onPressed: (){
+                       Navigator.pushNamed(context, loginRoute);
+                    },
                      child: Text("LOGIN",
                      style: GoogleFonts.nunito(
                       color: Colors.white,

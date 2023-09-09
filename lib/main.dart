@@ -1,3 +1,5 @@
+import 'package:blaze_stream/pages/input_loginPage.dart';
+import 'package:blaze_stream/routes.dart';
 import 'package:flutter/material.dart';
 import 'package:blaze_stream/pages/Login_page.dart';
 
@@ -18,6 +20,11 @@ class MyApp extends StatelessWidget {
         
       ),
      home: const Loginpage(),
+           
+      routes: {
+      loginRoute: (context) => const InputLoginPage(),
+      
+    },
     );
   }
 }

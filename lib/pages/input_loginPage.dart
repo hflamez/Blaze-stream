@@ -1,14 +1,14 @@
 
 
 import 'package:blaze_stream/buttons/primaryButtons.dart';
+import 'package:get/get.dart';
 import 'package:blaze_stream/pages/background.dart';
-import 'package:blaze_stream/routes.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 
 class InputLoginPage extends StatefulWidget {
-  const InputLoginPage({Key? key, String title = ''}) : super(key: key);
+  const InputLoginPage( {Key? key, String title = ''}) : super(key: key);
 
   @override
   InputLoginPageState createState() => InputLoginPageState();
@@ -19,6 +19,17 @@ class InputLoginPageState extends State<InputLoginPage> {
   bool showPass = false;
   final TextEditingController _email = TextEditingController();
   final TextEditingController _password = TextEditingController();
+   
+   @override
+   void initState() {
+    Future.delayed( const Duration(microseconds: 1), () {
+      setState(() {
+        showAnimated = true;
+      });
+
+    });
+    super.initState();
+   }
 
   @override
   void dispose() {
@@ -36,7 +47,7 @@ class InputLoginPageState extends State<InputLoginPage> {
       appBar: AppBar(
         centerTitle: true,
         leading: IconButton(
-          onPressed: () {},
+          onPressed: () => Get.back( ),
           icon: const Icon(
             Icons.arrow_back_ios_rounded,
             color: Colors.white,
@@ -111,6 +122,7 @@ class InputLoginPageState extends State<InputLoginPage> {
       icon: Icon(
         showPass ?Icons.visibility : Icons.visibility_off,
         color: Colors.grey,
+               
       ),),
                     ),
                   ),
@@ -125,25 +137,69 @@ class InputLoginPageState extends State<InputLoginPage> {
                     ),
             ),)),
 
-             const SizedBox( height: 20,
+              const SizedBox( height: 20,
             ),
-            GestureDetector(
-              onTap: () {
+            TextButton(
+              onPressed: () {
                 
               },
-              child: PrimaryButton(
-                title:  "Login",
-                width: screenWidth * .8,
-                height: 50,
-                
-              ),
-            )
+              child: Text('LOGIN',
+                 style: GoogleFonts.josefinSans(
+                 color: Colors.white,
+                  fontSize: 20,
+                  fontWeight: FontWeight.bold,
+                  backgroundColor: const Color.fromARGB(255, 61, 61, 62),
+                  
+              ),))
               ],
               
             ),
             
           ),
-       
+       AnimatedPositioned(
+        curve: Curves.easeIn,
+        duration:const Duration(milliseconds: 80),
+        bottom:  showAnimated? -screenWidth*08 : screenHeight *.3,
+        right: showAnimated? -screenWidth*.15 : screenHeight * .18, 
+        child: AnimatedOpacity(
+          opacity: showAnimated ? 1 : 0, 
+          duration: const Duration(milliseconds: 400),
+          child: Container(
+            padding: const EdgeInsets.all(55),
+            width: screenWidth * .65,
+            height:  screenHeight *.65,
+            decoration:  const BoxDecoration(
+              shape: BoxShape.circle,
+              gradient: LinearGradient(colors:[Colors.blueGrey,
+                                                Color.fromARGB(255, 113, 109, 109)]  )
+            ),
+
+            child:  Stack(
+              alignment:  Alignment.center,
+              children: [
+                Container(
+                  width: 40 ,
+                  height: 40,
+                  decoration: BoxDecoration(
+                    color: Colors.white.withOpacity(.5)
+                  ),
+                ),
+                Container(
+                  width: 40 ,
+                  height: 40,
+                  decoration: BoxDecoration(
+                    color: Colors.white.withOpacity(.5)
+                  ),
+                ),
+                Column(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+
+                  ],
+                )
+              ],
+            ),
+          ),),)
         
         ],
         

@@ -16,7 +16,7 @@ import 'package:google_fonts/google_fonts.dart';
      return Container(
       width: width,
       height: height,
-      decoration: BoxDecoration(
+      decoration: const BoxDecoration(
         borderRadius: BorderRadius.all( Radius.circular(10)),
         gradient: LinearGradient(
           colors:[ Colors.grey,
